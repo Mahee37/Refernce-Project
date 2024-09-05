@@ -1,0 +1,22 @@
+package com.revbookstore.dao;
+
+import java.util.LinkedList;
+
+import com.revbookstore.dto.CartItem;
+
+public interface ShappingCartDAO {
+
+	int addProduct(long userId, long productId);
+
+	LinkedList<CartItem> getCartItemsForUserId(long userId);
+
+	boolean isProductInCart(Long userId, long id);
+
+	boolean checkoutCart(Long userId, String city, String address, String pincode, String phoneNumber,
+			String paymentMethod);
+
+	boolean deleteCart(Long uid, long pid);
+
+	void updateProductQuantity(Long uid, long pid, int quantity);
+
+}
